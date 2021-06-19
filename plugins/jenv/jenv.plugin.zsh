@@ -16,7 +16,7 @@ fi
 
 if [[ $FOUND_JENV -eq 1 ]]; then
     (( $+commands[jenv] )) || export PATH="${jenvdir}/bin:$PATH"
-    eval "$(jenv init - zsh)"
+    _evalcache jenv init - zsh
 
     function jenv_prompt_info() { jenv version-name 2>/dev/null }
 
